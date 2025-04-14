@@ -51,7 +51,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
     if (req.file) {
         res.json({
             success: 1,
-            image_url: `https://e-commerce-backend-53cq.onrender.com/images/${req.file.filename}`
+            image_url: `https://ecom-mern-admin.onrender.com/images/${req.file.filename}`
         });
     } 
     else {
