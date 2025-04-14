@@ -49,15 +49,16 @@ app.use('/images', express.static('upload/images'));
 // Upload endpoint for the images
 app.post("/upload", upload.single('product'), (req, res) => {
     if (req.file) {
+        const imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`;
         res.json({
             success: 1,
-            image_url: `https://ecom-mern-admin.onrender.com/images/${req.file.filename}`
+            image_url: imageUrl
         });
-    } 
-    else {
+    } else {
         res.status(400).json({ success: 0, message: "File upload failed" });
     }
 });
+
 
 //Schema for creating products
 
