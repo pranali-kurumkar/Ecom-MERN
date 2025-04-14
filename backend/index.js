@@ -19,7 +19,7 @@ app.use(cors());
 const uploadDir = './upload/images';
 
 // Database connection with MongoDB
-// mongoose.connect("mongodb+srv://pranali:pranali07@cluster0.tt2niig.mongodb.net/e-commerce")
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('MongoDB connection error:', error));
